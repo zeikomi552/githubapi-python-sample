@@ -14,7 +14,10 @@ class confg_manager:
             "PASSWORD": password
             })
 
-        with open(self._file_path, 'w') as outfile:
+        # create directory
+        os.makedirs(".\\config", exist_ok=True)
+
+        with open(self._file_path, 'w+') as outfile:
             json.dump(data, outfile)
 
     def load(self):
