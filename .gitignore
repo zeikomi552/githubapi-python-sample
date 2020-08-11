@@ -1,3 +1,7 @@
 api_result/*
 __pycache__/*
 config/setting.cnf
+tests/__pycache__/*
+src/github_api/__pycache__/*
+src/__pycache__/*
+

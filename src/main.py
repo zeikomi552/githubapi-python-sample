@@ -5,7 +5,6 @@ import pandas as pd
 import pprint
 import os
 import re
-import github_api_test as g_api
 import config_manager as cnf
 import github_api.github_api_manager as g_api_ex
 
