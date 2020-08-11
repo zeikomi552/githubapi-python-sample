@@ -1,2 +1,4 @@
 api_result/*
 __pycache__/*
+config/*
+config/setting.cnf
