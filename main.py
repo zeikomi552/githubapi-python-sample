@@ -6,10 +6,9 @@ import pprint
 import os
 import re
 import github_api_test as g_api
+import config_manager as cnf
 
 # parameters
-USERNAME = 'xxxxxxx' # github username
-PASSWORD = 'xxxxxxx'  # github password
 RESULT_FOLDER = 'api_result' # resuls folder path
 API_V3 = 'https://api.github.com'
 API_V3_FILE_NAME = "api.github.com"
@@ -22,8 +21,14 @@ def main_func():
     # create directory
     os.makedirs(RESULT_FOLDER, exist_ok=True)
 
+    cnf_data = cnf.confg_manager()
+    
+    # load config file
+    cnf_data.load()
+    username, userpassword = cnf_data.get_userparam()
+
     # init class object
-    g_api_class = g_api.github_api_sample(USERNAME, PASSWORD)
+    g_api_class = g_api.github_api_sample(username, userpassword)
     g_api_class.init_api_v3_json()
 
     # save api v3 json

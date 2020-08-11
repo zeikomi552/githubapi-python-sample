@@ -74,18 +74,33 @@ class github_api_sample:
         """ save json file
 
         Args:
-            json_obj (JSON object): [description]
-            file_path (str): [description]
+            json_obj (JSON object): [json object]
+            file_path (str): [save file path]
         """
 
         # save json file
         with open(file_path, 'w') as outfile:
             json.dump(json_obj, outfile, indent=4)
 
-    def save_api_v3_json_no_param(self, result_folder_path):
+    def save_json_object(self, base_url, file_path):
+        """ request github rest api v3
 
-        # init api v3
-        self.init_api_v3_json()
+        Args:
+            base_url (str): [github api base url]
+            file_path (str): [save file path]
+        """
+        # get json file
+        tmp_json = self.get_api_json(base_url)
+
+        # save file
+        self.save_json(tmp_json, file_path)
+
+    def save_api_v3_json_no_param(self, result_folder_path):
+        """ save no parameter api 
+
+        Args:
+            result_folder_path (str): [output folder]
+        """
 
         # get items
         for key, value in self.api_v3_json.items():
@@ -100,8 +115,9 @@ class github_api_sample:
             # non args check
             if result is None:
 
-                # get json file
-                tmp_json = self.get_api_json(value)
+                # request and save
+                self.save_json_object(value, file_path)
 
-                # save file
-                self.save_json(tmp_json, file_path)
+
+
+

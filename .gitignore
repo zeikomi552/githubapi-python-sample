@@ -1,0 +1,16 @@
+api_result/api.github.com.json
+api_result/authorizations_url.json
+api_result/current_user_url.json
+api_result/emails_url.json
+api_result/emojis_url.json
+api_result/events_url.json
+api_result/feeds_url.json
+api_result/followers_url.json
+api_result/hub_url.json
+api_result/issues_url.json
+api_result/keys_url.json
+api_result/notifications_url.json
+api_result/public_gists_url.json
+api_result/rate_limit_url.json
+api_result/starred_gists_url.json
+api_result/user_organizations_url.json
