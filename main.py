@@ -19,9 +19,8 @@ def main_func():
     # create directory
     os.makedirs(RESULT_FOLDER, exist_ok=True)
 
-    cnf_data = cnf.confg_manager()
-    
     # load config file
+    cnf_data = cnf.confg_manager()
     cnf_data.load()
     username, userpassword = cnf_data.get_userparam()
 
