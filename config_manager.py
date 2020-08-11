@@ -3,7 +3,7 @@ import os
 
 class confg_manager:
 
-    _file_path = "config/setting.cnf"
+    _file_path = ".\\config\\setting.cnf"
     _conf_json = {}
 
     def save(self, user_name, password):
@@ -25,8 +25,11 @@ class confg_manager:
             # oprn json file
             with open(self._file_path, "r") as json_file:
 
+                # load jason data
+                json_data = json.load(json_file)
+
                 # set member parameter
-                self._conf_json = json_file
+                self._conf_json = json_data
 
         else:
             self.save("","") # Empty data Save
