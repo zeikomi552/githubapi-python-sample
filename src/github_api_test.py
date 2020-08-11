@@ -82,7 +82,7 @@ class github_api_sample:
         with open(file_path, 'w') as outfile:
             json.dump(json_obj, outfile, indent=4)
 
-    def save_json_object(self, base_url, file_path):
+    def save_api(self, base_url, file_path):
         """ request github rest api v3
 
         Args:
@@ -116,7 +116,7 @@ class github_api_sample:
             if result is None:
 
                 # request and save
-                self.save_json_object(value, file_path)
+                self.save_api(value, file_path)
 
 
 

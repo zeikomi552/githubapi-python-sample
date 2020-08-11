@@ -7,6 +7,7 @@ import os
 import re
 import github_api_test as g_api
 import config_manager as cnf
+import github_api.github_api_manager as g_api_ex
 
 # parameters
 RESULT_FOLDER = 'api_result' # resuls folder path
@@ -24,15 +25,13 @@ def main_func():
     cnf_data.load()
     username, userpassword = cnf_data.get_userparam()
 
-    # init class object
-    g_api_class = g_api.github_api_sample(username, userpassword)
-    g_api_class.init_api_v3_json()
+    # create github api object
+    g_api_mn = g_api_ex.github_api_manager(username, userpassword)
+    tmp = g_api_mn.get_user()
 
-    # save api v3 json
-    g_api_class.save_api_v3_json(RESULT_FOLDER)
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(tmp)
 
-    # request api v3
-    g_api_class.save_api_v3_json_no_param(RESULT_FOLDER)
 
 if __name__ == '__main__':
     main_func()
