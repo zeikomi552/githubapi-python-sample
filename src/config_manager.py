@@ -6,6 +6,10 @@ class confg_manager:
     _file_path = ".\\config\\setting.cnf"
     _conf_json = {}
 
+    def get_userconf(self):
+        self.load()
+        return self.get_userparam()
+
     def save(self, user_name, password):
         data = {}
         data['user_param'] = []

@@ -54,3 +54,9 @@ class github_api_manager:
             base_url = "https://api.github.com/users/{0}".format(username)
 
         return self.get_api_json(base_url)
+
+    def get_users_fllowers(self, username):
+
+        base_url = "https://api.github.com/users/{0}/followers".format(username)
+
+        return self.get_api_json(base_url)
