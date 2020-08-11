@@ -10,8 +10,6 @@ import config_manager as cnf
 
 # parameters
 RESULT_FOLDER = 'api_result' # resuls folder path
-API_V3 = 'https://api.github.com'
-API_V3_FILE_NAME = "api.github.com"
 
 # move current directory 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
