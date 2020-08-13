@@ -28,11 +28,12 @@ class github_api_manager:
         Returns:
             [JSON object]: [result]
         """
+
         # 1. create url text
         url = self.GITHUB_API + api # base url
 
         # return json
-        return self.get_json_url(url)
+        return self.get_json_url(url, debug_log)
 
     def get_json_url(self, url, debug_log = False):
         """ request and get json file
